@@ -1,26 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Number Guessing Game</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Number Guessing Game</title>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
+  <div class="game-container">
+    <h1>Guess the Number!</h1>
+    <p>Guess a number between 1 and 10</p>
+    <input type="number" id="guessInput" min="1" max="10" />
+    <button id="submitGuess">Submit</button>
+    <p id="result"></p>
+    <div class="animation-box" id="animationBox"></div>
+  </div>
 
-    <div class="container">
-        <h1>🎲 Number Guessing Game 🎲</h1>
-    <p>Guess a number between 1 and 5</p>
-
-    <input type="number" id="guess"min = "1" max="100">
-    <button
-    onclick="checkGuess()">Guess</button>
-    <p id="message">Hi</p>
-    <P>Attempts:<span id="attempts">0</span></P>
-    <button
-    onclick="resetGame()">play Again</button>
-</div>
-
-<script src="script.js" async defer></script>
+  <script src="script.js"></script>
 </body>
 </html>

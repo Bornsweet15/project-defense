@@ -1,35 +1,25 @@
-let secretNumber = Math.floor(Math.random()*5)+ 1; let attempts = 0;
+const guessInput = document.getElementById("guessInput");
+const submitBtn = document.getElementById("submitGuess");
+const result = document.getElementById("result");
+const animationBox = document.getElementById("animationBox");
 
-function checkGuess() {
-    let userGuess = document.getElementById("guess").value;
-    let message =
-    document.getElementById("message");
-    let attemptsDisplay =
-    document.getElementById("attempts");
+let randomNumber = Math.floor(Math.random() * 10) + 1;
 
-    attempts++;
-    attemptsDisplay.innerText = attempts;
+submitBtn.addEventListener("click", () => {
+  const guess = parseInt(guessInput.value);
+  animationBox.style.display = "block";
 
-    if (userGuess < secretNumber) {
-        message.innerText = "Too low! Try again"
-        message.style.color = "red";
-    }else if (userGuess > secretNumber){
-        message.innerText = "Too high!Try again";
-        message.style.color = "red";
-    } else {
-        message.innerText = `congratulation! you guessed it in ${attempts} attempts.`;
-        message.style.color = "green";
-    }
+  if (guess === randomNumber) {
+    result.textContent = "🎉 Sweet! You've guessed it right! 🎉";
+    animationBox.className = "animation-box correct";
+    randomNumber = Math.floor(Math.random() * 10) + 1; // reset game
+  } else {
+    result.textContent =  "🍭 Oh so close! You're below the target number! 🍭";
+    animationBox.className = "animation-box wrong";
+  }
 
-}
-function resetGame() {
-    secretNumber =Math.floor(Math.random()* 5) + 1;
-    attempts = 0;
-
-    document.getElementById("guess").value = "";
-
-    document.getElementById("message").innerText = "";
-
-    document.getElementById("attempts").innerText = attempts
-
-}
+  setTimeout(() => {
+    animationBox.className = "animation-box";
+    animationBox.style.display = "none";
+  }, 1000);
+});
