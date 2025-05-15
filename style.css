@@ -1,69 +1,232 @@
+
 body {
-    font-family: Arial, sans-serif;
-    background: linear-gradient(to right, #6dd5ed, #2193b0);
-    color: white;
-    text-align: center;
-    padding: 50px;
+  background: linear-gradient(to right, #fbd3e9, #bb377d);
+  color: #222;
+  overflow-x: hidden;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Outfit', sans-serif;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  animation: dropFade 0.8s ease-in-out;
+}
+
+header h1 {
+  color: #bb377d;
+  font-size: 2.2rem;
+  font-weight: bold;
+}
+
+nav a {
+  margin-left: 1.5rem;
+  text-decoration: none;
+  color: #444;
+  font-weight: 600;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  width: 0;
+  height: 2px;
+  background: #bb377d;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+#modeToggle {
+  margin-left: 1.5rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#modeToggle:hover {
+  transform: rotate(20deg);
+}
+
+.hero {
+  padding: 6rem 2rem;
+  text-align: center;
+  color: #fff;
+  background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c') no-repeat center center/cover;
+  animation: fadeZoom 1.2s ease-in-out;
+}
+
+.hero h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+}
+
+.hero button {
+  padding: 1rem 2.5rem;
+  background: #fff;
+  color: #bb377d;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.hero button:hover {
+  background: #ffdef0;
+  transform: translateY(-5px);
+}
+
+.section {
+  padding: 5rem 2rem;
+  background: #fff;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  animation: slideUp 1s ease-in;
+}
+
+.card {
+  background: linear-gradient(to top right, #ffe5f7, #e1f0ff);
+  padding: 2rem;
+  border-radius: 1.25rem;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.07);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  color: #bb377d;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #444;
+}
+
+footer {
+  background: #fce4ec;
+  padding: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+/* Animations */
+@keyframes dropFade {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
   }
-  
-  .game-container {
-    background: rgba(0, 0, 0, 0.3);
-    padding: 30px;
-    border-radius: 10px;
-    width: 300px;
-    margin: auto;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  input, button {
-    padding: 10px;
-    margin: 10px 5px;
-    border: none;
-    border-radius: 5px;
-    font-size: 16px;
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(1.1);
   }
-  
-  button {
-    background-color: #28a745;
-    color: white;
-    cursor: pointer;
+  100% {
+    opacity: 1;
+    transform: scale(1);
   }
-  
-  #result {
-    font-size: 18px;
-    margin-top: 20px;
+}
+
+@keyframes slideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
   }
-  
-  .animation-box {
-    width: 50px;
-    height: 50px;
-    margin: 20px auto;
-    display: none;
-    border-radius: 50%;
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .correct {
-    animation: bounce 1s infinite;
-    background-color: #00ff00;
-  }
-  
-  .wrong {
-    animation: shake 0.5s;
-    background-color: #ff0000;
-  }
-  
-  @keyframes bounce {
-    0%, 100% {
-      transform: translateY(0px);
-    }
-    50% {
-      transform: translateY(-20px);
-    }
-  }
-  
-  @keyframes shake {
-    0% { transform: translateX(0px); }
-    25% { transform: translateX(-10px); }
-    50% { transform: translateX(10px); }
-    75% { transform: translateX(-10px); }
-    100% { transform: translateX(0px); }
-  }
+}
+
+/* DARK MODE - FIXED & BEAUTIFUL */
+body.dark-mode {
+  background: linear-gradient(to right, #1a1a1a, #121212);
+  color: #f0f0f0;
+}
+
+body.dark-mode header {
+  background: rgba(30, 30, 30, 0.95);
+}
+
+body.dark-mode nav a {
+  color: #f0f0f0;
+}
+
+body.dark-mode nav a::after {
+  background: #ff69b4;
+}
+
+body.dark-mode .hero {
+  color: #ffffff;
+  background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c') no-repeat center center/cover;
+}
+
+body.dark-mode .hero button {
+  background: #ff69b4;
+  color: #fff;
+}
+
+body.dark-mode .hero button:hover {
+  background: #e055a1;
+}
+
+body.dark-mode .section {
+  background: #1e1e1e;
+}
+
+body.dark-mode .card {
+  background: linear-gradient(to top right, #2d2d2d, #3a3a3a);
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .card h3 {
+  color: #ff69b4;
+}
+
+body.dark-mode .card p {
+  color: #ddd;
+}
+
+body.dark-mode footer {
+  background: #101010;
+  color: #aaa;
+}

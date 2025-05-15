@@ -2,19 +2,60 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Number Guessing Game</title>
-  <link rel="stylesheet" href="style.css"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CurveMetrics</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="game-container">
-    <h1>Guess the Number!</h1>
-    <p>Guess a number between 1 and 10</p>
-    <input type="number" id="guessInput" min="1" max="10" />
-    <button id="submitGuess">Submit</button>
-    <p id="result"></p>
-    <div class="animation-box" id="animationBox"></div>
-  </div>
+  <header>
+    <h1>CurveMetrics</h1>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+      <button id="modeToggle">🌙</button>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Confidence in Every Curve</h2>
+    <p>Step into a world of fashion redefined by boldness, beauty, and intelligent design. CurveMetrics celebrates YOU.</p>
+    <button onclick="scrollToSection('features')">Discover More</button>
+  </section>
+
+  <section class="section" id="features">
+    <div class="card">
+      <h3>Runway-Ready Design</h3>
+      <p>Glamorous, responsive, and visually rich layouts made for the modern, stylish individual.</p>
+    </div>
+    <div class="card">
+      <h3>AI Measurements</h3>
+      <p>Utilize cutting-edge technology to analyze, suggest, and match fashion items to unique curves.</p>
+    </div>
+    <div class="card">
+      <h3>Animated Style</h3>
+      <p>Every interaction tells a story — vibrant animations bring your fashion journey to life.</p>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="card">
+      <h3>About CurveMetrics</h3>
+      <p>CurveMetrics is a fashion-tech initiative built to revolutionize body positivity through tailored fashion metrics, style intelligence, and digital self-love.</p>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="card">
+      <h3>Contact Us</h3>
+      <p>Email: marycynthiaamarachukwu6@gmail.com<br>Instagram: <strong>@curvemetrics</strong></p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 CurveMetrics. Made with love and code. 💖
+  </footer>
 
   <script src="script.js"></script>
 </body>
