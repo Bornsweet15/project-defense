@@ -50,7 +50,7 @@ nav a:hover::after {
   width: 100%;
 }
 
-#modeToggle {
+#shutterstock {
   margin-left: 1.5rem;
   background: none;
   border: none;
@@ -67,7 +67,7 @@ nav a:hover::after {
   padding: 6rem 2rem;
   text-align: center;
   color: #fff;
-  background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c') no-repeat center center/cover;
+  background: url('https://www.shutterstock.com/shutterstock/photos/1479411389/display_1500/stock-photo-dressmaker-cutting-dress-fabric-on-sketch-line-with-sewing-machine-fashion-designer-tailor-or-1479411389.jpg') no-repeat center center/cover;
   animation: fadeZoom 1.2s ease-in-out;
 }
 
@@ -81,6 +81,27 @@ nav a:hover::after {
   font-size: 1.25rem;
   max-width: 600px;
   margin: 0 auto 2rem auto;
+}
+
+/* about us style */
+.about-sections .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem;
+    gap: 1rem;
+}
+.about-sections .about-image img{
+    width: 40vw;
+    height: 40vh;
+    object-fit: cover;
+}
+.about-sections .about-content{
+    text-align: justify;
+}
+.about-sections .about-content h3{
+    text-align: center;
+    font-size: 32px;
 }
 
 .hero button {
@@ -195,8 +216,7 @@ body.dark-mode nav a::after {
 }
 
 body.dark-mode .hero {
-  color: #ffffff;
-  background: url('https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c') no-repeat center center/cover;
+  color: #ffffff no-repeat center center/cover
 }
 
 body.dark-mode .hero button {
@@ -230,3 +250,4 @@ body.dark-mode footer {
   background: #101010;
   color: #aaa;
 }
+
